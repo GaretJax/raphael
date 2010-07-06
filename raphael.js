@@ -949,7 +949,7 @@ Raphael = (function () {
         Paper[proto].svgns = "http://www.w3.org/2000/svg";
         Paper[proto].xlink = "http://www.w3.org/1999/xlink";
         round = function (num) {
-            return +num + (~~num === num) * .5;
+            return num.match && num.match(/%$/) ? num : +num + (~~num === num) * .5;
         };
         var $ = function (el, attr) {
             if (attr) {
